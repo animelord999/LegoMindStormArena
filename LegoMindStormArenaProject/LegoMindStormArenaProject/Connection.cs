@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+
 // Done by Nadeem Abu Shanab.
 namespace LegoMindStormArenaProject
 { 
-    class Connect
+    class Connection
     {
         public Brick _Brick;
         public async Task Connecting()
