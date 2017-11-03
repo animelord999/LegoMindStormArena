@@ -94,11 +94,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\legoev3-master\Lego.Ev3.Desktop\Lego.Ev3.Desktop.csproj">
-      <Project>{79c444de-86f1-4aff-903a-4b6ed31655ea}</Project>
-      <Name>Lego.Ev3.Desktop</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
