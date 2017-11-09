@@ -8,5 +8,23 @@ namespace LegoMindStormArenaProject
 {
     class Sensors
     {
+        public string Colour;
+        public int Gyro;
+        public int UltraSonic;
+
+        public string getColour()
+        {
+            return Colour;
+        }
+
+        public int getGyro()
+        {
+            return Gyro;
+        }
+
+        public int getUltraSonic()
+        {
+            return UltraSonic;
+        }
     }
 }
