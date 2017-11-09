@@ -8,5 +8,9 @@ namespace LegoMindStormArenaProject
 {
     class Corner
     {
+        public int corner;
+        public int motor;
+
+     
     }
 }
