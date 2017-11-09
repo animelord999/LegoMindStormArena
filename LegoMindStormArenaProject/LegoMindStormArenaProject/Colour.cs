@@ -10,5 +10,6 @@ namespace LegoMindStormArenaProject
 {
     class Colour
     {
+        // Background = Brushes.Red;
     }
 }

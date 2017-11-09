@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Done by Nadeem Abu Shanab.
+
 namespace LegoMindStormArenaProject
 {
     class Turn

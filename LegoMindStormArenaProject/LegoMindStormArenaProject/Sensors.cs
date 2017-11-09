@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Done by Nadeem Abu Shanab.
+
 namespace LegoMindStormArenaProject
 {
     class Sensors
@@ -22,13 +24,19 @@ namespace LegoMindStormArenaProject
             return Colour;
         }
 
-        public int getGyro()
+        public int getGyro(object sender, BrickChangedEventArgs e)
         {
+            var port2 = e.Ports[InputPort.Three];
+            var press = port2.SIValue;
+
             return Gyro;
         }
 
-        public int getUltraSonic()
+        public int getUltraSonic(object sender, BrickChangedEventArgs e)
         {
+            var port2 = e.Ports[InputPort.One];
+            var press = port2.SIValue;
+
             return UltraSonic;
         }
     }
