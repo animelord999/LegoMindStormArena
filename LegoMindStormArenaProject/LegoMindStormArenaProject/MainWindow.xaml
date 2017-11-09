@@ -7,6 +7,47 @@
         mc:Ignorable="d"
         Title="Lego MindStorm Tricks" Height="350" Width="525">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="150" Height="50" 
+               Content="MindStorm Tricks" FontSize="18" />
+
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Width="125" Height="30" 
+               Content="Colour Sensor" FontSize="16" />
+
+        <Label Name="lblColourSensor" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Width="125" Height="30" 
+               Content="####" FontSize="16" Margin="0,0,0,15" />
+
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Width="125" Height="30" 
+               Content="Gyro Sensor" FontSize="16" />
+
+        <Label Name="lblGyroSensor" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="125" Height="30" 
+               Content="####" FontSize="16" />
+
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Width="150" Height="30" 
+               Content="Ultra Sonic Sensor" FontSize="16" />
         
+        <Label Name="lblUltraSonicSensor" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" Width="125" Height="30" 
+               Content="####" FontSize="16" Margin="0,0,0,6" />
+
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Width="125" Height="30" 
+               Content="Motor Speed" FontSize="16" />
+
+        <Label Name="lblMotorSpeed" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Width="125" Height="30" 
+               Content="####" FontSize="16" Margin="0,0,0,15" />
+
+        <ComboBox Name="cmbChoose" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="125" Height="30" 
+                FontSize="16" Margin="0,0,0,0" /> 
+
+
     </Grid>
 </Window>
