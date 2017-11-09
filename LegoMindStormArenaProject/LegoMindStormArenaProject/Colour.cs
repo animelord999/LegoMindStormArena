@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lego.Ev3.Core;
+using Lego.Ev3.Desktop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace LegoMindStormArenaProject
 {
     class Colour
     {
+        // Background = Brushes.Red;
     }
 }
