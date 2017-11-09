@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lego.Ev3.Core;
+using Lego.Ev3.Desktop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +14,11 @@ namespace LegoMindStormArenaProject
         public int Gyro;
         public int UltraSonic;
 
-        public string getColour()
+        public string getColour(object sender, BrickChangedEventArgs e)
         {
+            var port2 = e.Ports[InputPort.Two];
+            var press = port2.SIValue;
+
             return Colour;
         }
 
