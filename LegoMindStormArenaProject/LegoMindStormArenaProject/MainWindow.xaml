@@ -55,7 +55,7 @@
                 Height="50" Content="Down" FontSize="16" Margin="0,0,0,5" />
 
         <Button Name="btnLeft" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="50"
-                Height="50" Content="Left" FontSize ="16" Margin="0,0,0,5" />
+                Height="50" Content="Left" FontSize="16" Margin="0,0,0,5" />
 
         <Button Name="btnRight" Grid.Row="1"  Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="50"
                 Height="50" Content="Right" FontSize="16" Margin="0,0,0,5" />

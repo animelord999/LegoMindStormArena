@@ -22,6 +22,7 @@ namespace LegoMindStormArenaProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        Brick _Brick;
         Connection Connection;
         public MainWindow()
         {
@@ -30,12 +31,14 @@ namespace LegoMindStormArenaProject
         }
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+
             Connection = new Connection();
             await Connection.Connecting();
             Connection._Brick.BrickChanged += _Brick_BrickColour;
             //connecting.TurnMotor();
             Connection._Brick.BrickChanged += _Brick_BrickGyro;
             Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
+
         }
 
         private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)

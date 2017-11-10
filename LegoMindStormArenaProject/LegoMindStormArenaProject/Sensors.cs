@@ -26,6 +26,7 @@ namespace LegoMindStormArenaProject
 
         public float getGyro(object sender, BrickChangedEventArgs e)
         {
+
             var port1 = e.Ports[InputPort.One];
             var Gyro = port1.SIValue;
 
