@@ -22,6 +22,7 @@ namespace LegoMindStormArenaProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        Brick _Brick;
         Connection Connection;
         public MainWindow()
         {
@@ -30,6 +31,7 @@ namespace LegoMindStormArenaProject
         }
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+
             Connection = new Connection();
             await Connection.Connecting();
             Connection._Brick.BrickChanged += _Brick_BrickColour;
@@ -52,6 +54,25 @@ namespace LegoMindStormArenaProject
         {
             Sensors UltraSonic = new Sensors();
             lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
+        }
+
+        private void btnLeft_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUp_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnBottom_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRight_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

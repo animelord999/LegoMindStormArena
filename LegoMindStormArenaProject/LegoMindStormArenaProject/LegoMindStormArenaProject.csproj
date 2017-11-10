@@ -57,6 +57,7 @@
     <Compile Include="Colour.cs" />
     <Compile Include="Corner.cs" />
     <Compile Include="Home.cs" />
+    <Compile Include="Motor.cs" />
     <Compile Include="Sensors.cs" />
     <Compile Include="Turn.cs" />
     <Page Include="MainWindow.xaml">
