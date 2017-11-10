@@ -16,8 +16,8 @@ namespace LegoMindStormArenaProject
         public Brick _Brick;
         public async Task Connecting()
         { 
-         //_Brick = new Brick(new BluetoothCommunication("COM6"));
-         _Brick = new Brick(new UsbCommunication());
+         _Brick = new Brick(new BluetoothCommunication("COM9"));
+        // _Brick = new Brick(new UsbCommunication());
             _Brick.BrickChanged += _Brick_BrickChanged;
 
             await _Brick.ConnectAsync();

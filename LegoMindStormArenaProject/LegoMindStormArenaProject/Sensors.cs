@@ -16,26 +16,26 @@ namespace LegoMindStormArenaProject
         public int Gyro;
         public int UltraSonic;
 
-        public string getColour(object sender, BrickChangedEventArgs e)
+        public float getColour(object sender, BrickChangedEventArgs e)
         {
             var port2 = e.Ports[InputPort.Two];
-            var press = port2.SIValue;
+            var Colour = port2.SIValue;
 
             return Colour;
         }
 
-        public int getGyro(object sender, BrickChangedEventArgs e)
+        public float getGyro(object sender, BrickChangedEventArgs e)
         {
-            var port2 = e.Ports[InputPort.Three];
-            var press = port2.SIValue;
+            var port1 = e.Ports[InputPort.One];
+            var Gyro = port1.SIValue;
 
             return Gyro;
         }
 
-        public int getUltraSonic(object sender, BrickChangedEventArgs e)
+        public float getUltraSonic(object sender, BrickChangedEventArgs e)
         {
-            var port2 = e.Ports[InputPort.One];
-            var press = port2.SIValue;
+            var port3 = e.Ports[InputPort.Three];
+            var UltraSonic = port3.SIValue;
 
             return UltraSonic;
         }

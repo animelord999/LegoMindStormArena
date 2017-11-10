@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Lego.Ev3.Core;
+using Lego.Ev3.Desktop;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,36 @@ namespace LegoMindStormArenaProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        Connection Connection;
         public MainWindow()
         {
             InitializeComponent();
+            this.Loaded += MainWindow_Loaded;
+        }
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Connection = new Connection();
+            await Connection.Connecting();
+            Connection._Brick.BrickChanged += _Brick_BrickColour;
+            //connecting.TurnMotor();
+            Connection._Brick.BrickChanged += _Brick_BrickGyro;
+            Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
+        }
+
+        private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
+        {
+            Sensors Colour = new Sensors();
+            lblColourSensor.Content = Colour.getColour(sender, e);
+        }
+        private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
+        {
+            Sensors Gyro = new Sensors();
+            lblGyroSensor.Content = Gyro.getGyro(sender, e);
+        }
+        private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
+        {
+            Sensors UltraSonic = new Sensors();
+            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
         }
     }
 }
