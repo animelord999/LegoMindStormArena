@@ -10,15 +10,26 @@ using System.Threading.Tasks;
 
 namespace LegoMindStormArenaProject
 {
-    class Corner : Colour
+    class Corner : Sensors
     {
         public int corner;
         public int motor;
 
-     
-        public int BlackRed()
+        Sensors UltraSonic  = new Sensors();
+        Brick _Brick;    
+        public int BlackRed(object sender, BrickChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            if (UltraSonic.getUltraSonic(sender, e) >= 5)
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
+            }
+            else if (UltraSonic.getUltraSonic(sender, e) < 5)
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -10);
+            }
+
+           
+            
         }
 
         public int BlackYellow()

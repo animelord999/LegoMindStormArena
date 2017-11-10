@@ -53,5 +53,10 @@ namespace LegoMindStormArenaProject
             Sensors UltraSonic = new Sensors();
             lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
         }
+
+        private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
