@@ -17,7 +17,7 @@ namespace LegoMindStormArenaProject
         public void Right(object sender, BrickChangedEventArgs e)
         {
             Sensors Gyro = new Sensors();
-            int Direction =Convert.ToInt32(Gyro.getGyro(sender , e));
+            int Direction = Convert.ToInt32(Gyro.getGyro(sender , e));
 
             if (Direction <= Direction + 90 )
             { 
@@ -34,14 +34,40 @@ namespace LegoMindStormArenaProject
             return;
         }
 
-        public string Left()
+        public void Left(object sender, BrickChangedEventArgs e)
         {
-            return Left();
+            Sensors Gyro = new Sensors();
+            int Direction = Convert.ToInt32(Gyro.getGyro(sender, e));
+
+            if (Direction <= Direction - 90)
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -50);
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 50);
+            }
+            else
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
+            }
+            return;
         }
 
-        public string Around()
+        public void Around(object sender, BrickChangedEventArgs e)
         {
-            return Around();
+            Sensors Gyro = new Sensors();
+            int Direction = Convert.ToInt32(Gyro.getGyro(sender, e));
+
+            if (Direction <= Direction + 180)
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -50);
+            }
+            else
+            {
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
+                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
+            }
+            return;
         }
     }
 }
