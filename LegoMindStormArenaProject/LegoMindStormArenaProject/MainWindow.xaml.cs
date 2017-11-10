@@ -38,6 +38,7 @@ namespace LegoMindStormArenaProject
             //connecting.TurnMotor();
             Connection._Brick.BrickChanged += _Brick_BrickGyro;
             Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
+
         }
 
         private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
@@ -54,25 +55,6 @@ namespace LegoMindStormArenaProject
         {
             Sensors UltraSonic = new Sensors();
             lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
-        }
-
-        private void btnLeft_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnUp_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void btnBottom_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnRight_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }
