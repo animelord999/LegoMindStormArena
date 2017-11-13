@@ -48,13 +48,13 @@
         <ComboBox Name="cmbChoose" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Width="125" Height="30" 
                 FontSize="16" Margin="0,0,0,0" SelectionChanged="cmbChoose_SelectionChanged" />
 
-        <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Width="75" Height="20" FontSize="16"/>
+        <Label Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Width="75" Height="25" FontSize="10" Content="Choose Corner"/>
 
         <Button Name="Exit" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="60" Height="35" Content="Exit"/>
 
         <Button Name="Home" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="55" Height="35" Content="Go Home" Margin="62,0,56,0"/>
 
-
+        <Button Name="Go" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="35" Content="Go"/>
 
 
     </Grid>
