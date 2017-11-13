@@ -61,5 +61,10 @@ namespace LegoMindStormArenaProject
         {
 
         }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+            this.Turn.Right();
+        }
     }
 }

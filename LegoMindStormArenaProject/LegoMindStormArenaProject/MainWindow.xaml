@@ -52,7 +52,7 @@
 
         <Button Name="Exit" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="60" Height="35" Content="Exit"/>
 
-        <Button Name="Home" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="55" Height="35" Content="Go Home" Margin="62,0,56,0"/>
+        <Button Name="Home" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="55" Height="35" Content="Go Home" Margin="62,0,56,0" Click="Home_Click"/>
 
         <Button Name="Go" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="50" Height="35" Content="Go"/>
 

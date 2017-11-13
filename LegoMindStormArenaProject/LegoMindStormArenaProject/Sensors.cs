@@ -40,5 +40,10 @@ namespace LegoMindStormArenaProject
 
             return UltraSonic;
         }
+
+        private double avgDistance()
+        {
+            return avgDistance();
+        }
     }
 }
