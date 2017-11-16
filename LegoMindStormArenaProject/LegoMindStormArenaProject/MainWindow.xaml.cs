@@ -29,6 +29,7 @@ namespace LegoMindStormArenaProject
         Connection Connection;
         public MainWindow()
         {
+            _Brick = new Brick(new BluetoothCommunication("COM7"));
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
         }
@@ -41,7 +42,7 @@ namespace LegoMindStormArenaProject
             //connecting.TurnMotor();
             Connection._Brick.BrickChanged += _Brick_BrickGyro;
             Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
-            Connection._Brick.BrickChanged += Right;
+
 
         }
 
@@ -68,13 +69,15 @@ namespace LegoMindStormArenaProject
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-           // Right(sender, e);
+            Connection._Brick.BrickChanged += Right;
+            // Right(sender, e);
         }
 
-        private void Right(object sender, BrickChangedEventArgs e)
+        public void Right(object sender, BrickChangedEventArgs e)
        {
-            Turn turn = new Turn();
-            turn.Right(sender, e);
+           _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
+           _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -50);
+
 
         }
 
