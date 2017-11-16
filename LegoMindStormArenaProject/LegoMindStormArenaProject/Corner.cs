@@ -19,29 +19,30 @@ namespace LegoMindStormArenaProject
         
         Brick _Brick;
 
-        public float getUSS(object sender, BrickChangedEventArgs e)
-        {
-            var port3 = e.Ports[InputPort.Three];
-            var UltraSonic = port3.SIValue;
+        Colour colour = new Colour();
 
-            return UltraSonic;
-        }
+        
 
-        /* public void BlackRed(object sender, BrickChangedEventArgs e)
+         public void BlackRed(object sender, BrickChangedEventArgs e)
          {
-             if (getUSS.UltraSonic >= 5)
+            var port3 = e.Ports[InputPort.Three];
+            var UltraS = port3.SIValue;
+
+            if (UltraS >= 5)
              {
                  _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
              }
-             else if (UltraSonic.getUltraSonic(sender, e) < 5)
+             else if (UltraS < 5)
              {
                  _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -10);
              }
-             if ()
+            
+            
 
 
-       
-    }  */
+
+
+        }  
 
         public int BlackYellow()
         {
