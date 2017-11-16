@@ -24,6 +24,8 @@ namespace LegoMindStormArenaProject
             return Colour;
         }
 
+        //Brick.brickChanged += getGyro;
+
         public float getGyro(object sender, BrickChangedEventArgs e)
         {
 

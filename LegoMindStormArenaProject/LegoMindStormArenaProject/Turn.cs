@@ -14,24 +14,26 @@ namespace LegoMindStormArenaProject
     {
         Brick _Brick;
 
-        public void Right(object sender, BrickChangedEventArgs e)
+
+       public async Task Right(object sender, BrickChangedEventArgs e)
         {
+
             Sensors Gyro = new Sensors();
             int Direction = Convert.ToInt32(Gyro.getGyro(sender , e));
 
-            if (Direction <= Direction + 90 )
-            { 
-                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
-                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -50);
-            }
-            else
-            {
-                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
-                _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
-            }
+           // if (Direction <= Direction + 90 )
+           // { 
+              await _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
+               await _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -50);
+           // }
+           // else
+           // {
+          //      _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
+            //    _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
+           // }
             
 
-            return;
+            
         }
 
         public void Left(object sender, BrickChangedEventArgs e)

@@ -23,6 +23,9 @@ namespace LegoMindStormArenaProject
     public partial class MainWindow : Window
     {
         Brick _Brick;
+
+        Turn turn = new Turn();
+
         Connection Connection;
         public MainWindow()
         {
@@ -38,6 +41,7 @@ namespace LegoMindStormArenaProject
             //connecting.TurnMotor();
             Connection._Brick.BrickChanged += _Brick_BrickGyro;
             Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
+            Connection._Brick.BrickChanged += Right;
 
         }
 
@@ -64,7 +68,19 @@ namespace LegoMindStormArenaProject
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            this.Turn.Right();
+           // Right(sender, e);
+        }
+
+        private void Right(object sender, BrickChangedEventArgs e)
+       {
+            Turn turn = new Turn();
+            turn.Right(sender, e);
+
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
