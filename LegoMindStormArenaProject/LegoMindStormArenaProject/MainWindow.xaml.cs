@@ -40,7 +40,7 @@ namespace LegoMindStormArenaProject
 
         private void _Brick_BrickColour(Brick brick)
         {
-            Sensor Colour = new Sensor();
+            Sensor Colour = new Sensor()
             lblColourSensor.Content = Colour.getColour(brick);
         }
         private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
