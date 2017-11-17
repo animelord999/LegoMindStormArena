@@ -1,5 +1,6 @@
 ﻿using Lego.Ev3.Core;
 using Lego.Ev3.Desktop;
+using Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,18 +41,18 @@ namespace LegoMindStormArenaProject
 
         private void _Brick_BrickColour(Brick brick)
         {
-            Sensor Colour = new Sensor()
+            Sensor Colour = new Sensor();
             lblColourSensor.Content = Colour.getColour(brick);
         }
-        private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
+        private void _Brick_BrickGyro(Brick brick)
         {
-            Sensors Gyro = new Sensors();
-            lblGyroSensor.Content = Gyro.getGyro(sender, e);
+            Sensor Gyro = new Sensor();
+            lblGyroSensor.Content = Gyro.getGyro(brick);
         }
-        private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
+        private void _Brick_BrickUltraSonic(Brick brick)
         {
-            Sensors UltraSonic = new Sensors();
-            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
+            Sensor UltraSonic = new Sensor();
+            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(brick);
         }
 
         private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)

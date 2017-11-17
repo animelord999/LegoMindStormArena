@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Sensor
+   public class Sensor
     {
 
 
