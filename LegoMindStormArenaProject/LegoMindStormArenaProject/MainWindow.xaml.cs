@@ -24,32 +24,24 @@ namespace LegoMindStormArenaProject
     {
         Brick _Brick;
 
-        Turn turn = new Turn();
 
         Connection Connection;
         public MainWindow()
         {
-            _Brick = new Brick(new BluetoothCommunication("COM7"));
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
         }
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-
-            Connection = new Connection();
-            await Connection.Connecting();
-            Connection._Brick.BrickChanged += _Brick_BrickColour;
-            //connecting.TurnMotor();
-            Connection._Brick.BrickChanged += _Brick_BrickGyro;
-            Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
-
+            Brick brick = new Brick(new UsbCommunication());
+            await brick.ConnectAsync();
 
         }
 
-        private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
+        private void _Brick_BrickColour(Brick brick)
         {
-            Sensors Colour = new Sensors();
-            lblColourSensor.Content = Colour.getColour(sender, e);
+            Sensor Colour = new Sensor();
+            lblColourSensor.Content = Colour.getColour(brick);
         }
         private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
         {
@@ -65,20 +57,7 @@ namespace LegoMindStormArenaProject
         private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void Home_Click(object sender, RoutedEventArgs e)
-        {
-            Connection._Brick.BrickChanged += Right;
-            // Right(sender, e);
-        }
-
-        public void Right(object sender, BrickChangedEventArgs e)
-       {
-           _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 50);
-           _Brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -50);
-
-
+        
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

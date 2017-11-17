@@ -105,6 +105,10 @@
       <Project>{79c444de-86f1-4aff-903a-4b6ed31655ea}</Project>
       <Name>Lego.Ev3.Desktop</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{f502cef2-01ad-48b2-b3a7-5ea4cf27df3d}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

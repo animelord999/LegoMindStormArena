@@ -25,5 +25,10 @@ namespace LegoMindStormArenaProject
 
             return RightMotor;
         }
+
+        internal static void TurnAround(Brick brick)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
