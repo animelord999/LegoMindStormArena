@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Library
 {
     public class Motor
-    {
+    {        
         public static async void TurnRight(Brick brick)
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, 50, 450, false);
@@ -27,9 +27,9 @@ namespace Library
 
         public static async void TurnAround(Brick brick)
         {
-            brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -50, 900, false);
-            brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 50, 900, false);
-
+            brick.BatchCommand.TurnMotorAtPower(OutputPort.A, -50);
+            brick.BatchCommand.TurnMotorAtPower(OutputPort.D, 50);
+   
             await brick.BatchCommand.SendCommandAsync();
         }
     }

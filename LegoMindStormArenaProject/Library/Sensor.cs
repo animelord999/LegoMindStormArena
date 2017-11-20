@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-   public class Sensor
+  public class Sensor
     {
-
-
-        public float getGyro(object sender, BrickChangedEventArgs e)
+        public float getGyro(Brick brick)
         {
-            var port3 = e.Ports[InputPort.Three];
-            var Gyro = port3.SIValue;
-
-            return Gyro;
+            return brick.Ports[InputPort.Three].SIValue;
         }
 
         public float getColour(object sender, BrickChangedEventArgs e)

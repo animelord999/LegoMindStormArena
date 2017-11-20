@@ -23,7 +23,7 @@ namespace LegoMindStormArenaProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        Brick _Brick;
+        Brick brick;
 
         public float potato;
         
@@ -31,15 +31,20 @@ namespace LegoMindStormArenaProject
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
+
         }
+
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Brick brick = new Brick(new UsbCommunication());
-            await brick.ConnectAsync();
+            this.brick = new Brick(new UsbCommunication());
+            await brick.ConnectAsync();         
 
             brick.BrickChanged += _Brick_BrickUltraSonic;
             brick.BrickChanged += _Brick_BrickColour;
             brick.BrickChanged += _Brick_BrickGyro;
+
+            Motor.TurnAround(brick);
+
 
         }
 
@@ -51,7 +56,7 @@ namespace LegoMindStormArenaProject
         private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
         {
             Sensor Gyro = new Sensor();
-            lblGyroSensor.Content = Gyro.getGyro(sender, e);
+            lblGyroSensor.Content = Gyro.getGyro(brick);
         }
 
         private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
