@@ -11,27 +11,26 @@ namespace Library
     {
 
 
-        public float getGyro(Brick brick)
+        public float getGyro(object sender, BrickChangedEventArgs e)
         {
-
-            var port1 = brick.Ports[InputPort.One];
-            var Gyro = port1.SIValue;
+            var port3 = e.Ports[InputPort.Three];
+            var Gyro = port3.SIValue;
 
             return Gyro;
         }
 
-        public float getColour(Brick brick)
+        public float getColour(object sender, BrickChangedEventArgs e)
         {
-            var port2 = brick.Ports[InputPort.Two];
-            var Colour = port2.SIValue;
+            var port4 = e.Ports[InputPort.Four];
+            var Colour = port4.SIValue;
 
             return Colour;
         }
 
-        public float getUltraSonic(Brick brick)
+        public float getUltraSonic(object sender, BrickChangedEventArgs e)
         {
-            var port3 = brick.Ports[InputPort.Three];
-            var UltraSonic = port3.SIValue;
+            var port2 = e.Ports[InputPort.Two];
+            var UltraSonic = port2.SIValue;
 
             return UltraSonic;
         }

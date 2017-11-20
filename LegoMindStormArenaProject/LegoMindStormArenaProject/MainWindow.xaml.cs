@@ -25,8 +25,8 @@ namespace LegoMindStormArenaProject
     {
         Brick _Brick;
 
-
-        Connection Connection;
+        public float potato;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -37,22 +37,27 @@ namespace LegoMindStormArenaProject
             Brick brick = new Brick(new UsbCommunication());
             await brick.ConnectAsync();
 
+            brick.BrickChanged += _Brick_BrickUltraSonic;
+            brick.BrickChanged += _Brick_BrickColour;
+            brick.BrickChanged += _Brick_BrickGyro;
+
         }
 
-        private void _Brick_BrickColour(Brick brick)
+        private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
         {
             Sensor Colour = new Sensor();
-            lblColourSensor.Content = Colour.getColour(brick);
+            lblColourSensor.Content = Colour.getColour(sender, e);
         }
-        private void _Brick_BrickGyro(Brick brick)
+        private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
         {
             Sensor Gyro = new Sensor();
-            lblGyroSensor.Content = Gyro.getGyro(brick);
+            lblGyroSensor.Content = Gyro.getGyro(sender, e);
         }
-        private void _Brick_BrickUltraSonic(Brick brick)
+
+        private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
         {
-            Sensor UltraSonic = new Sensor();
-            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(brick);
+            Sensor UltraSonic = new Sensor();          
+            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
         }
 
         private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -64,6 +69,11 @@ namespace LegoMindStormArenaProject
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void Home_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

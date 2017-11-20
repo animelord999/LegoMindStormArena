@@ -13,7 +13,6 @@ namespace Library
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, 50, 450, false);
             brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, -50, 450, false);
-            brick.BatchCommand.PlayTone(50, 1000, 500);
 
             await brick.BatchCommand.SendCommandAsync();
         }
@@ -22,7 +21,6 @@ namespace Library
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -50, 450, false);
             brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 50, 450, false);
-            brick.BatchCommand.PlayTone(50, 1000, 500);
 
             await brick.BatchCommand.SendCommandAsync();
         }
@@ -31,7 +29,6 @@ namespace Library
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -50, 900, false);
             brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 50, 900, false);
-            brick.BatchCommand.PlayTone(50, 1000, 500);
 
             await brick.BatchCommand.SendCommandAsync();
         }

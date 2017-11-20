@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LegoMindStormArenaProject
 {
-    class Colour : Sensors
+    class Colour // : Sensors
     {
         public int sumAverage(params int[] avgDistance)
         {
@@ -29,7 +29,7 @@ namespace LegoMindStormArenaProject
         public int yellow = 4;
         public int red = 5;
 
-        public Seekcolour(object sender, BrickChangedEventArgs e)
+       /* public Seekcolour(object sender, BrickChangedEventArgs e)
         {
             if (result += 1)
             {
@@ -50,7 +50,8 @@ namespace LegoMindStormArenaProject
             {
                 return red;
             }
+            */
         }
     }
-}
+
 
