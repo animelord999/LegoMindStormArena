@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Colour : Sensor
+    public class Colour : Sensor
     {
         Brick brick;
 
