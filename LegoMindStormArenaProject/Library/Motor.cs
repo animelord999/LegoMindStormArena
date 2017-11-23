@@ -27,9 +27,9 @@ namespace Library
 
         public static async void TurnAround(Brick brick)
         {
-            brick.BatchCommand.TurnMotorAtPower(OutputPort.A, -50);
-            brick.BatchCommand.TurnMotorAtPower(OutputPort.D, 50);
-   
+            brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -50, 900, false);
+            brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 50, 900, false);
+
             await brick.BatchCommand.SendCommandAsync();
         }
     }
