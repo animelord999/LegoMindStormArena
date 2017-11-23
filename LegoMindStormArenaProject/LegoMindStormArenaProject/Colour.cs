@@ -10,27 +10,46 @@ using System.Threading.Tasks;
 
 namespace LegoMindStormArenaProject
 {
-   
-    class Colour
+    class Colour : Sensor
     {
+        public int sumAverage(params int[] avgDistance)
+        {
+            int result = 0;
+
+            for (int i = 0; i < avgDistance.Length; i++)
+            {
+                result += avgDistance[i];
+            }
+
+            return result;
+        }
+
         public int black = 1;
         public int blue = 2;
         public int yellow = 4;
         public int red = 5;
 
-        // Background = Brushes.Red;
+        public int result { get; private set; }
 
-        /* public Seekcolour(object sender, BrickChangedEventArgs e)
-         {
-             if (SIValue)
+        public double Seekcolour(object sender, BrickChangedEventArgs e)
+        {
+            switch (result)
+            {
+                case 1:
+                    return black;
 
-             Background = Brushes.Red;
-                 Brush brush = new SolidColorBrush(System.Windows.Media.Color.FromRgb((byte)r.Next(1, 255), (byte)r.Next(1, 255), (byte)r.Next(1, 255)));
-                 Background = brush;
-                 Background = Brushes.White;
-                 return colour;
-         } */
+                case 2:
+                    return blue;
 
+                case 4:
+                    return yellow;
 
+                case 5:
+                    return red;
+
+                default:
+                    return -1;
+            }
+        }
     }
 }
