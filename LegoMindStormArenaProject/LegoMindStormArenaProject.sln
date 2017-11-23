@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoMindStormArenaProject", "LegoMindStormArenaProject\LegoMindStormArenaProject.csproj", "{4E159DBD-E702-4383-BFEA-47AF1CDCC600}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Desktop", "..\Lego.Ev3.Desktop\Lego.Ev3.Desktop.csproj", "{79C444DE-86F1-4AFF-903A-4B6ED31655EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{F502CEF2-01AD-48B2-B3A7-5EA4CF27DF3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F502CEF2-01AD-48B2-B3A7-5EA4CF27DF3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F502CEF2-01AD-48B2-B3A7-5EA4CF27DF3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F502CEF2-01AD-48B2-B3A7-5EA4CF27DF3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F502CEF2-01AD-48B2-B3A7-5EA4CF27DF3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

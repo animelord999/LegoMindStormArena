@@ -1,5 +1,6 @@
 ﻿using Lego.Ev3.Core;
 using Lego.Ev3.Desktop;
+using Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,49 +23,62 @@ namespace LegoMindStormArenaProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        Brick _Brick;
-        Connection Connection;
+        Brick brick;
+
+        public float potato;
+        
         public MainWindow()
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
+
         }
+
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            this.brick = new Brick(new UsbCommunication());
+            await brick.ConnectAsync();         
 
-            Connection = new Connection();
-            await Connection.Connecting();
-            Connection._Brick.BrickChanged += _Brick_BrickColour;
-            //connecting.TurnMotor();
-            Connection._Brick.BrickChanged += _Brick_BrickGyro;
-            Connection._Brick.BrickChanged += _Brick_BrickUltraSonic;
+            brick.BrickChanged += _Brick_BrickUltraSonic;
+            brick.BrickChanged += _Brick_BrickColour;
+            brick.BrickChanged += _Brick_BrickGyro;
+
+            Motor.TurnAround(brick);
+
 
         }
 
         private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
         {
-            Sensors Colour = new Sensors();
+            Sensor Colour = new Sensor();
             lblColourSensor.Content = Colour.getColour(sender, e);
         }
         private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
         {
-            Sensors Gyro = new Sensors();
-            lblGyroSensor.Content = Gyro.getGyro(sender, e);
+            Sensor Gyro = new Sensor();
+            lblGyroSensor.Content = Gyro.getGyro(brick);
         }
+
         private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
         {
-            Sensors UltraSonic = new Sensors();
+            Sensor UltraSonic = new Sensor();          
             lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
         }
 
         private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-            this.Turn.Right();
+
         }
     }
 }
