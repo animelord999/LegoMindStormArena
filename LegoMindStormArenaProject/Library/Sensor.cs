@@ -14,20 +14,14 @@ namespace Library
             return brick.Ports[InputPort.Three].SIValue;
         }
 
-        public float getColour(object sender, BrickChangedEventArgs e)
+        public float getColour(Brick brick)
         {
-            var port4 = e.Ports[InputPort.Four];
-            var Colour = port4.SIValue;
-
-            return Colour;
+            return brick.Ports[InputPort.Four].SIValue;
         }
 
-        public float getUltraSonic(object sender, BrickChangedEventArgs e)
+        public float getUltraSonic(Brick brick)
         {
-            var port2 = e.Ports[InputPort.Two];
-            var UltraSonic = port2.SIValue;
-
-            return UltraSonic;
+            return brick.Ports[InputPort.Two].SIValue;
         }
     }
 }

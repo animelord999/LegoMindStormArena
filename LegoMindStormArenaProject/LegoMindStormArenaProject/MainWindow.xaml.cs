@@ -52,7 +52,7 @@ namespace LegoMindStormArenaProject
         private void _Brick_BrickColour(object sender, BrickChangedEventArgs e)
         {
             Sensor Colour = new Sensor();
-            lblColourSensor.Content = Colour.getColour(sender, e);
+            lblColourSensor.Content = Colour.getColour(brick);
         }
         private void _Brick_BrickGyro(object sender, BrickChangedEventArgs e)
         {
@@ -63,7 +63,7 @@ namespace LegoMindStormArenaProject
         private void _Brick_BrickUltraSonic(object sender, BrickChangedEventArgs e)
         {
             Sensor UltraSonic = new Sensor();          
-            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(sender, e);
+            lblUltraSonicSensor.Content = UltraSonic.getUltraSonic(brick);
         }
 
         private void cmbChoose_SelectionChanged(object sender, SelectionChangedEventArgs e)
