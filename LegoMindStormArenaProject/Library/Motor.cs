@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    public class Motor
+    public class Motor : Colour 
     {        
         public static async void TurnRight(Brick brick)
         {
