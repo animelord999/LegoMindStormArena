@@ -38,7 +38,7 @@ namespace LegoMindStormArenaProject
         {
             //Brick brick = new Brick(new UsbCommunication());
            // this.brick = new Brick(new UsbCommunication());
-           this.brick = new Brick(new BluetoothCommunication("COM4"));
+           this.brick = new Brick(new BluetoothCommunication("COM3"));
             await brick.ConnectAsync();         
 
             brick.BrickChanged += _Brick_BrickUltraSonic;
