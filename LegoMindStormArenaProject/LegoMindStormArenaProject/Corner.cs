@@ -72,18 +72,26 @@ namespace LegoMindStormArenaProject
             {
                 Motor.TurnRight(brick);
             }
-            while (UltraS != 5)
+            while (UltraS < 6 || UltraS > 7)
             {
-                if (UltraS >= 5)
+                if (UltraS > 7 && UltraS != 255)
                 {
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 15);
+                    brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, 20, 1000, false);
+                    brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 31, 1000, false);
+                    //brick.BatchCommand.TurnMotorAtPower(OutputPort.A, 25);
+                    //brick.BatchCommand.TurnMotorAtPower(OutputPort.D, 25);
+                    await brick.BatchCommand.SendCommandAsync();
                 }
-                else if (UltraS <= 5)
+                else if (UltraS < 6 || UltraS == 255)
                 {
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -10);
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
+                    brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -10, 500, false);
+                    brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, -10, 500, false);
+                    //brick.BatchCommand.TurnMotorAtPower(OutputPort.A, -20);
+                    //brick.BatchCommand.TurnMotorAtPower(OutputPort.D, -20);
+                    await brick.BatchCommand.SendCommandAsync();
                 }
+                await Task.Delay(1500);
+                UltraS = brick.Ports[InputPort.Two].SIValue;
             }
         }  
 
