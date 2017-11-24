@@ -11,7 +11,7 @@ using Library;
 
 namespace LegoMindStormArenaProject
 {
-    class Corner : Motor
+    public class Corner : Motor
     {
         public int corner;
         public int motor;
@@ -20,7 +20,7 @@ namespace LegoMindStormArenaProject
         
         Brick brick;
 
-        Colour result = new Colour();
+        Colour colourv = new Colour();
         Motor turn = new Motor();
         
 
@@ -42,23 +42,23 @@ namespace LegoMindStormArenaProject
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
                 }
             }
-            while (corner != result.red || corner != result.black)
+            while (corner != colourv.red || corner != colourv.black)
             {
-                if (corner == result.blue)
+                if (corner == colourv.blue)
                 {
                     Motor.TurnAround(brick);
                 }
-                else if (corner == result.yellow)
+                else if (corner == colourv.yellow)
                 {
                     Motor.TurnLeft(brick);
                 }
             }
-            if (corner == result.black)
+            if (corner == colourv.black)
             {
                 Motor.TurnLeft(brick);
                 
             }
-            else if (corner == result.red)
+            else if (corner == colourv.red)
             {
                 Motor.TurnRight(brick);
             }
@@ -95,23 +95,23 @@ namespace LegoMindStormArenaProject
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
                 }
             }
-            while (corner != result.yellow || corner != result.black)
+            while (corner != colourv.yellow || corner != colourv.black)
             {
-                if (corner == result.blue)
+                if (corner == colourv.blue)
                 {
                     Motor.TurnAround(brick);
                 }
-                else if (corner == result.red)
+                else if (corner == colourv.red)
                 {
                     Motor.TurnRight(brick);
                 }
             }
-            if (corner == result.black)
+            if (corner == colourv.black)
             {
                 Motor.TurnRight(brick);
 
             }
-            else if (corner == result.yellow)
+            else if (corner == colourv.yellow)
             {
                 Motor.TurnLeft(brick);
             }
@@ -149,23 +149,23 @@ namespace LegoMindStormArenaProject
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
                 }
             }
-            while (corner != result.blue || corner != result.red)
+            while (corner != colourv.blue || corner != colourv.red)
             {
-                if (corner == result.yellow)
+                if (corner == colourv.yellow)
                 {
                     Motor.TurnAround(brick);
                 }
-                else if (corner == result.black)
+                else if (corner == colourv.black)
                 {
                     Motor.TurnLeft(brick);
                 }
             }
-            if (corner == result.red)
+            if (corner == colourv.red)
             {
                 Motor.TurnLeft(brick);
 
             }
-            else if (corner == result.blue)
+            else if (corner == colourv.blue)
             {
                 Motor.TurnRight(brick);
             }
@@ -203,23 +203,23 @@ namespace LegoMindStormArenaProject
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
                 }
             }
-            while (corner != result.blue || corner != result.yellow)
+            while (corner != colourv.blue || corner != colourv.yellow)
             {
-                if (corner == result.red)
+                if (corner == colourv.red)
                 {
                     Motor.TurnAround(brick);
                 }
-                else if (corner == result.black)
+                else if (corner == colourv.black)
                 {
                     Motor.TurnRight(brick);
                 }
             }
-            if (corner == result.blue)
+            if (corner == colourv.blue)
             {
                 Motor.TurnLeft(brick);
 
             }
-            else if (corner == result.yellow)
+            else if (corner == colourv.yellow)
             {
                 Motor.TurnRight(brick);
             }
