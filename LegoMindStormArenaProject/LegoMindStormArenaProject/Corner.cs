@@ -31,15 +31,15 @@ namespace LegoMindStormArenaProject
             
             while (UltraS != 5)
             {
-                if (UltraS > 5)
+                if (UltraS >= 5)
                 {
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 15);
                 }
-                else if (UltraS < 5)
+                else if (UltraS <= 5)
                 {
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -10);
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
+                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 20);
+                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 20);
                 }
             }
             while (corner != colourv.red || corner != colourv.black)
@@ -69,7 +69,7 @@ namespace LegoMindStormArenaProject
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 15);
                 }
-                else if (UltraS < 5)
+                else if (UltraS <= 5)
                 {
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, -10);
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, -10);
