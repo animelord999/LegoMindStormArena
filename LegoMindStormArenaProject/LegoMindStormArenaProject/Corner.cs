@@ -31,7 +31,7 @@ namespace LegoMindStormArenaProject
             
             while (UltraS != 5)
             {
-                if (UltraS >= 5)
+                if (UltraS > 5)
                 {
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 15);
