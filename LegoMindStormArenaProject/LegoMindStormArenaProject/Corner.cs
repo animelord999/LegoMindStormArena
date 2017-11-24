@@ -26,20 +26,22 @@ namespace LegoMindStormArenaProject
 
          public void BlackRed(Brick brick)
          {
-            var port3 = brick.Ports[InputPort.Three];
-            var UltraS = port3.SIValue;
+            Sensor UltraSonic = new Sensor();
+           float UltraS = UltraSonic.getUltraSonic(brick);
+
             
-            while (UltraS != 5)
+
+            while (UltraS != 10)
             {
-                if (UltraS >= 5)
+                if (UltraS >= 10)
                 {
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 15);
                     brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 15);
                 }
-                else if (UltraS <= 5)
+                else if (UltraS <= 10)
                 {
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 20);
-                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 20);
+                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.A, 0);
+                    brick.DirectCommand.TurnMotorAtPowerAsync(OutputPort.D, 0);
                 }
             }
             while (corner != colourv.red || corner != colourv.black)

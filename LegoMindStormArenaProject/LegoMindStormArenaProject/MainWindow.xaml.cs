@@ -37,7 +37,8 @@ namespace LegoMindStormArenaProject
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             //Brick brick = new Brick(new UsbCommunication());
-            this.brick = new Brick(new UsbCommunication());
+            //this.brick = new Brick(new UsbCommunication());
+            this.brick = new Brick(new BluetoothCommunication("COM7"));
             await brick.ConnectAsync();         
 
             brick.BrickChanged += _Brick_BrickUltraSonic;
@@ -79,7 +80,8 @@ namespace LegoMindStormArenaProject
 
         private void Home_Click(object sender, RoutedEventArgs e)
         {
-
+            Corner home = new Corner();
+            home.BlackRed(brick);
         }
     }
 }

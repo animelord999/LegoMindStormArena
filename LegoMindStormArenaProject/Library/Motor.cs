@@ -29,6 +29,7 @@ namespace Library
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.A, -50, 900, false);
             brick.BatchCommand.TurnMotorAtPowerForTime(OutputPort.D, 50, 900, false);
+           // brick.BatchCommand.TurnMotorAtPower(OutputPort.A, 100);
 
             await brick.BatchCommand.SendCommandAsync();
         }
