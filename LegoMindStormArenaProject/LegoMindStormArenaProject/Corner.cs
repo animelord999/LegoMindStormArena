@@ -27,9 +27,7 @@ namespace LegoMindStormArenaProject
          public void BlackRed(Brick brick)
          {
             Sensor UltraSonic = new Sensor();
-           float UltraS = UltraSonic.getUltraSonic(brick);
-
-            
+           float UltraS = UltraSonic.getUltraSonic(brick);           
 
             while (UltraS != 10)
             {
